@@ -773,48 +773,140 @@ header {
 /* إصلاح شكل الموقع على الموبايل */
 @media (max-width: 768px) {
 
-    * {
-        box-sizing: border-box;
-    }
-
     html,
     body {
         width: 100%;
         max-width: 100%;
-        margin: 0;
-        padding: 0;
         overflow-x: hidden;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    /* Navbar */
+    .header-container {
+        width: 100%;
+        padding: 10px 5%;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
-    .container {
-        width: 90%;
-        max-width: 100%;
-        margin: 0 auto;
+    .navigation {
+        width: 100%;
+        flex: 1 1 100%;
+        justify-content: center;
     }
 
-    h1 {
-        font-size: 42px;
+    .navigation ul {
+        width: 100%;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .nav-cta {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
         line-height: 1.2;
+        word-break: break-word;
     }
 
-    h2 {
-        font-size: 30px;
-        line-height: 1.3;
-    }
-
-    p {
+    .hero p {
         font-size: 18px;
+        max-width: 100%;
         line-height: 1.7;
     }
 
-    button,
-    .btn,
-    a {
-        max-width: 100%;
+    .hero-cta {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    /* Sections */
+    .about,
+    .goals,
+    .programs,
+    .team,
+    .partners,
+    .join-us {
+        padding: 70px 6%;
+    }
+
+    .about h2,
+    .goals h2,
+    .programs h2,
+    .team h2,
+    .partners h2,
+    .join-us h2 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .about p,
+    .join-us p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* Cards */
+    .goals-container,
+    .program-container,
+    .team-grid,
+    .partners-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .goal-card,
+    .program-card,
+    .team-card,
+    .partner {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .program-card {
+        padding: 30px 20px;
+    }
+
+    .program-card h3 {
+        margin-top: 55px;
+    }
+
+    /* Team images */
+    .team-card img {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: cover;
+    }
+
+    /* Partners */
+    .partner {
+        height: 180px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer .social-links {
+        gap: 18px;
+    }
+
+    .footer .social-links a {
+        font-size: 14px;
     }
 }
