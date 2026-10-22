@@ -4,17 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/jadeer.css">
     <title>چدير - مجتمع شبابي للتعلم و التطوير وفرص جديدة والناس اللي تشبهك </title>
+    <meta name="description" content="چدير مجتمع شبابي يقدم برامج تدريبية في المهارات الشخصية والبرمجة والذكاء الاصطناعي، وفرص جديدة مع الناس اللي تشبهك.">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="چدير - مجتمع شبابي للتعلم والتطوير">
+<meta property="og:description" content="برامج تدريبية في المهارات الشخصية والبرمجة والذكاء الاصطناعي، وفرص جديدة مع الناس اللي تشبهك.">
+<meta property="og:image" content="https://boshraahmed0652-byte.github.io/Jadeer/JADEER/css/Logo.png">
+<meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+<meta property="og:url" content="https://boshraahmed0652-byte.github.io/Jadeer/JADEER/">
+<meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="css/jadeer.css">
+    <script src="js/script.js" defer></script> <script type="module" src="js/firebase.js"></script>
+    <link rel="icon" href="css/Logo.png">
 </head>
 
 <body>
+    <div class="preloader" id="preloader">
+    <img src="css/Logo.png" alt="" class="preloader-logo">
+</div>
     <header>
         <div class="header-container">
             <a href="#" class="logo">
                 <img src="css/Logo.png" alt="شعار چدير">
                 <span>چدير</span>
             </a>
+            <button class="menu-toggle" aria-label="القائمة">☰</button>
+                <span class="hamburger"></span>
+            
             <nav class="navigation">
                 <ul>
                     <li><a href="#">الرئيسية</a></li>
@@ -26,19 +48,24 @@
                     <li><a href="#team">فريق چدير</a></li>
                     <li><a href="#">تواصل معنا</a></li>
                 </ul>
-                <a class="nav-cta" href="https://forms.gle/YCeAypSFu1i3XNsr5" target="_blank">انضم إلينا</a>
+                <a class="nav-cta" href="#join">انضم إلينا</a>
+                <button id="authBtn" class="auth-btn" type="button">تسجيل الدخول</button>
+            
             </nav>
         </div>
     </header>
     <div class="content">
         <section class="hero">
             <p>مجتمع شبابي للتعلم و التطوير</p>
-            <h1>كن چدير... قد التغيير</h1>
-            <p>فرص جديدة مع الناس اللي تشبهك</p>
-            <a class="hero-cta" href="https://forms.gle/YCeAypSFu1i3XNsr5" target="_blank">انضم إلينا</a>
+            <h1>كن <span class="gradient-text">چدير</span>... قد التغيير</h1>
+            <p class="typewriter-line">
+    <span id="typewriter">فرص جديدة مع الناس اللي تشبهك</span><span class="cursor"></span>
+</p>
+            <a class="hero-cta" href="#join">انضم إلينا</a>
+            
         </section>
     </div>
-    <section class="about" id="about">
+    <section class="about reveal" id="about">
         <h2>عن چدير</h2>
         <h3>JADEER|چدير</h3>
 
@@ -74,20 +101,20 @@
     <section class="goals" id="goals">
         <h2>أهدافنا</h2>
         <div class="goals-container">
-            <div class="goal-card 1">
+            <div class="goal-card 1 reveal">
                 <h3>تطوير الكفاءات وتأهيل الكوادر الشابة</h3>
                 <p>تزويد الشباب بالمعرفة المتخصصة والمهارات العملية الأكثر طلباً وتأثيراً في سوق العمل المعاصر، لتقليص
                     الفجوة
                     بين التعليم الأكاديمي والاحتياجات المهنية الفعلية.</p>
             </div>
-            <div class="goal-card 2">
+            <div class="goal-card 2 reveal">
                 <h3>صناعة ملتقيات وتجارب تفاعلية ملهمة</h3>
                 <p>تنظيم فعاليات نوعية، مؤتمرات، ومبادرات متخصصة تتيح للشباب تبادل الخبرات، وتوسيع شبكات علاقاتهم
-                    المهنية،
+                    المهنية，
                     والتواصل المباشر مع قادة القطاعات المختلفة.
                 </p>
             </div>
-            <div class="goal-card 3">
+            <div class="goal-card 3 reveal">
                 <h3> إثراء البيئة المجتمعية والترفيه الهادف</h3>
                 <p>خلق مساحات ترفيهية وثقافية محفزة تدعم شغف الشباب، وتدمج بين المتعة وتنمية الإبداع والشغف، لضمان بيئة
                     متكاملة تعزز الطاقة الإيجابية والعمل الجماعي</p>
@@ -117,6 +144,23 @@
             </div>
     </section>
     <div class="section-divider"></div>
+    <section class="stats" id="stats">
+    <div class="stats-container">
+        <div class="stat-item reveal">
+            <span class="stat-number" data-target="500" data-suffix="+">0</span>
+            <p>متدرب</p>
+        </div>
+        <div class="stat-item reveal">
+            <span class="stat-number" data-target="30" data-suffix="+">0</span>
+            <p>ورشة عمل</p>
+        </div>
+        <div class="stat-item reveal">
+            <span class="stat-number" data-target="10" data-suffix="+">0</span>
+            <p>شريك</p>
+        </div>
+    </div>
+</section>
+<div class="section-divider"></div>
     <!-- <section class="gallery" id="gallery">
         <h2>معرض الصور </h2>
         <div class="gallery-container">
@@ -129,21 +173,22 @@
     <section class="partners" id="partners">
         <h2>شركاؤنا</h2>
 
+<div class="partners-slider reveal">
         <div class="partners-container">
             <div class="partner">
-                <img src="css/imgs/WhatsApp Image 2026-09-27 at 12.30.45 PM.jpeg" alt="شريك چدير">
+                <img src="css/imgs/partner-1.jpeg" alt="شريك چدير">
             </div>
 
             <div class="partner">
-                <img src="css/imgs/WhatsApp Image 2026-09-27 at 12.30.49 PM.jpeg" alt="Bloom Work Space">
+                <img src="css/imgs/bloom-workspace.jpeg" alt="Bloom Work Space">
             </div>
 
             <div class="partner">
-                <img src="css/imgs/WhatsApp Image 2026-09-27 at 12.30.50 PM.jpeg" alt="Nostalgia Workspace">
+                <img src="css/imgs/nostalgia-workspace.jpeg" alt="Nostalgia Workspace">
             </div>
 
             <div class="partner">
-                <img src="css/imgs/WhatsApp Image 2026-09-27 at 12.30.55 PM.jpeg" alt="FA Model Scholars">
+                <img src="css/imgs/fa-model-scholars.jpeg" alt="FA Model Scholars">
             </div>
         </div>
     </section>ٍ
@@ -152,64 +197,67 @@
         <div class="team-container">
             <h2>فريقنا</h2>
             <p class="team-subtitle">وراء كل خطوة ناجحة فريق بيصنع الفرق </p>
+            <div class="team-filters">
+  <button class="filter-btn active" data-filter="all">ALL</button>
+  <button class="filter-btn" data-filter="leadership">Management</button>
+  <button class="filter-btn" data-filter="hr">HR</button>
+  <button class="filter-btn" data-filter="media">Media</button>
+  <button class="filter-btn" data-filter="it">IT</button>
+</div>
             <div class="team-grid">
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-08 at 5.45.12 PM.jpeg" alt="MUHMOUD BAHAA">
+                <div class="team-card reveal" data-category="leadership">
+                    <img src="css/imgs/mumoud-bahaa.jpg" alt="Mumoud Bahaa">
                     <h3>Mumoud Bahaa</h3>
-                    <p>Fخunder</p>
+                    <p>Funder</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-26 at 1.10.49 PM.jpeg" alt="Doaa Abdelsalam">
+                <div class="team-card reveal" data-category="leadership">
+                    <img src="css/imgs/doaa-abdelsalam.jpg" alt="Doaa Abdelsalam">
                     <h3>Doaa Abdelsalam</h3>
                     <P>CEO</P>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-26 at 12.14.08 PM.jpeg" alt="Mostafa Mahmoud">
+                <div class="team-card reveal" data-category="leadership">
+                    <img src="css/imgs/mostafa-mahmoud.jpg" alt="Mostafa Mahmoud">
                     <h3>Mostafa Mahmoud</h3>
                     <p>CO CEO</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/IMG-20260908-WA0062.jpg.jpeg" alt="Adham Mohammed">
+                <div class="team-card reveal" data-category="leadership">
+                    <img src="css/imgs/adham-mohammed.jpg" alt="Adham Mohammed">
                     <h3>Adham Mohammed</h3>
                     <p>CO CEO</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/IMG-20260908-WA0128.jpg.jpeg" alt="Belal Yosre">
+                <div class="team-card reveal" data-category="hr">
+                    <img src="css/imgs/belal-yosre.jpg" alt="Belal Yosre">
                     <h3>Belal Yosre</h3>
                     <p>Public Relations</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/IMG-20260908-WA0055.jpg.jpeg" alt="Ali Abdelsalam">
+                <div class="team-card reveal" data-category="media">
+                    <img src="css/imgs/ali-abdelsalam.jpg" alt="Ali Abdelsalam">
                     <h3>Ali Abdelsalam</h3>
                     <p>Media Buyer</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/photo.png" alt="Boshra Ahmed">
+                <div class="team-card reveal" data-category="it">
+                    <img src="css/imgs/boshra-ahmed.jpg" alt="Boshra Ahmed">
                     <h3>Boshra Ahmed</h3>
                     <p>IT</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/IMG-20260908-WA0067.jpg.jpeg" alt="Mohammed Abdullah">
-                    <h3>Mohammed Abdullah</h3>
-                    <p>Video Editer</p>
+                <div class="team-card reveal" data-category="hr">
+                    <img src="css/imgs/mahmoudel-Masry.jpg" alt="Mahmoud El-Masry">
+                    <h3>Mahmoud El-Masry</h3>
+                    <p>Human Resources</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-14 at 9.51.55 PM.jpeg" alt="Basmala Ali">
-                    <h3>Basmala Ali</h3>
-                    <p>Human Recourses</p>
+                
+                <div class="team-card reveal" data-category="media">
+                    <img src="css/imgs/menna-gad.jpg" alt="Menna Gad">
+                    <h3>Mennatullah Gad</h3>
+                    <p>Social Media Specialist</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-12 at 8.16.54 PM.jpeg" alt="Menna Gad">
-                    <h3>Menna Gad</h3>
-                    <p>Content Crreater</p>
-                </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-26 at 12.14.42 PM.jpeg" alt="Ziad Mohammed">
+                <div class="team-card reveal" data-category="hr">
+                    <img src="css/imgs/ziad-mohammed.jpg" alt="Ziad Mohammed">
                     <h3>Ziad Mohammed</h3>
                     <p>Human Recourses</p>
                 </div>
-                <div class="team-card">
-                    <img src="css/imgs/WhatsApp Image 2026-09-26 at 12.37.02 PM.jpeg" alt="Mohammed Ahmed">
+                <div class="team-card reveal" data-category="hr">
+                    <img src="css/imgs/mohammed-ahmed.jpg" alt="Mohammed Ahmed">
                     <h3>Mohammed Ahmed</h3>
                     <p>Human Recourses</p>
                 </div>
@@ -218,13 +266,81 @@
     </section>
 
     <div class="section-divider"></div>
-    <section class="join-us" id="join-us">
-        <div class="join-container">
-            <h2>انضم الى فريق چدير</h2>
-            <p> كن جزءاً من التغيير و ساهم في صناعة تجربة ملهمة للشباب</p>
-            <a href="https://forms.gle/YCeAypSFu1i3XNsr5" target="_blank">انضم إلينا </a>
+    <section class="testimonials" id="testimonials">
+    <h2>آراء المتدربين</h2>
+    <p class="testimonials-subtitle">كلام الناس عن چدير</p>
+
+    <div class="carousel reveal">
+        <button class="carousel-btn prev" aria-label="السابق">›</button>
+
+        <div class="carousel-track">
+            <div class="testimonial active">
+                <p class="testimonial-text">"شكرًا جدًا على المحاضرة المميزة والمفيدة، استفدت منها بشكل كبير، خصوصًا ان اسلوب الشرح كان سلس و اتوضح حاجلت كتيير في مجال مكافحة الآفات. أسلوب الشرح كان واضحًا ومنظمًا، وأتمنى حضور المزيد من المحاضرات المميزة زي كدا و
+ جزاكم الله خيرًا."</p>
+                <h3>Mostafa Mahmoud</h3>
+                <span >From Insect Biology to Precision Pest Management</span>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"perfect and very useful"</p>
+                <h3>Ahmed Moataz</h3>
+                <span>From Insect Biology to Precision Pest Management</span>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"كان رائعًا ومثمرًا"</p>
+                <h3>Youssef Yehia</h3>
+                <span>Attendance From Idea to Market</span>
+            </div>
         </div>
-    </section>
+
+        <button class="carousel-btn next" aria-label="التالي">‹</button>
+    </div>
+
+    <div class="carousel-dots"></div>
+</section>
+<div class="section-divider"></div>
+<section class="faq" id="faq">
+    <h2>أسئلة شائعة</h2>
+    <p class="faq-subtitle">كل اللي محتاج تعرفه قبل ما تنضم</p>
+
+    <div class="faq-list reveal">
+        <details class="faq-item">
+            <summary>مين يقدر ينضم لچدير؟</summary>
+            <p>لفئات اللي ليها الحق تنضم لـ "جدير" بتنقسم لثلاث فئات رئيسية:<br>الفئة الأولى: الجمهور العام، وهم الأفراد اللي حابين يستفيدوا من خدماتنا بشكل عام بدون أي قيود أو شروط على طبيعة الشخص.  <br> الفئة الثانية: فئة الشباب والطلاب، ودول اللي بينضموا لنا من خلال التقديم في الكليات، أو عبر التعاقدات والفعاليات المختلفة. <br>  الفئة الثالثة: المتطوعون، وهم أفراد التيم الداخلي الأساسي الخاص بـ "جدير". </p>
+        </details>
+
+        <details class="faq-item">
+            <summary>البرامج أونلاين ولا أوفلاين؟</summary>
+            <p>يواجد برامج أونلاين وأوفلاين</p>
+        </details>
+
+        <!-- <details class="faq-item">
+            <summary>هل بتدّوا شهادات؟</summary>
+            <p>نعم </p>
+        </details> -->
+
+        <details class="faq-item">
+            <summary>أسجّل إزاي؟</summary>
+            <p>املا فورم "انضم إلينا" وهنتواصل معاك.</p>
+        </details>
+    </div>
+</section>
+<div class="section-divider"></div>
+
+    <section class="join-us" id="join">
+    <h2>انضم إلينا</h2>
+    <p>سجّل بياناتك وهنتواصل معاك قريباً</p>
+
+    <form id="joinForm" class="join-form">
+        <input type="text" name="name" placeholder="الاسم بالكامل" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+        <input type="text" name="university" placeholder="الجامعة / الكلية">
+        <textarea name="message" rows="4" placeholder="ليه عايز تنضم لچدير؟"></textarea>
+        <button type="submit">إرسال</button>
+        <p id="formStatus" class="form-status"></p>
+    </form>
+</section>
+
     <footer class="footer">
         <h2>تابعنا</h2>
         <div class="social-links">
@@ -238,6 +354,31 @@
         </div>
         <p class="footer-copy">© 2026 Jadeer | چدير. جميع الحقوق محفوظة.</p>
     </footer>
+    <div class="auth-modal" id="authModal">
+    <div class="auth-box">
+        <button class="auth-close" id="authClose" type="button" aria-label="إغلاق">✕</button>
+
+        <h3 id="authTitle">تسجيل الدخول</h3>
+
+        <form id="authForm" class="auth-form">
+            <input type="text" name="displayName" id="authName" placeholder="الاسم" style="display:none;">
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+            <input type="password" name="password" placeholder="كلمة المرور (6 أحرف على الأقل)" minlength="6" required>
+            <button type="submit" id="authSubmit">دخول</button>
+            <p id="authStatus" class="form-status"></p>
+        </form>
+  <div class="auth-divider"><span>أو</span></div>
+<button type="button" id="googleBtn" class="google-btn">المتابعة بحساب Google</button>
+        <p class="auth-switch">
+            <span id="authSwitchText">معندكش حساب؟</span>
+            <button type="button" id="authSwitch">إنشاء حساب</button>
+        </p>
+    </div>
+</div>
+<div class="toast" id="toast"></div>
+    <button id="back-to-top" aria-label="الرجوع لأعلى الصفحة" title="الرجوع لأعلى الصفحة">
+    ↑
+</button>
 </body>
 
 </html>
